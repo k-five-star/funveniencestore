@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>제품목록</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function sendForm(name) {
+            var form = document.getElementById('prod_form')
+            form.setAttribute('store', name);
+            form.submit();
+        }
+
+        function setOffcanvasName(name) {
+            var value = name;
+            console.log(name);
+        }
+    </script>
+
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <div class="row sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="index.html">FUN의점</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <form action="/" method="post" class="d-flex">
+                            <li class="nav-item">
+                                <button class="btn btn-primary" type="submit" name="store" value="GS25">GS25</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-primary" type="submit" name="store" value="CU">CU</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-primary" type="submit" name="store" value="7ELEVEN">7ELEVEN</button>
+                            </li>
+                        </form>
+                    </ul>
+
+                    <form class="d-flex" method="post" action="/">
+                        <input class="form-control me-sm-2" type="text" placeholder="Search" name="name" >
+                        <button class="btn btn-secondary my-2 my-sm-0" 
+                            type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div> <!-- NavBar ROW -->
+
+        
+
+        <!-- content -->
+        <div class="row">
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 mt-5">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <% items.forEach((item) => { %>
+                        
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="<%=item.img%>"
+                                        alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder"><%= item.store%></h5> <!-- 판매처 -->
+                                            <h5 class="fw-bolder"><%= item.sale%></h5> <!-- 할인률 -->
+                                            <p><%= item.name%></p> <!-- 이름-->
+
+                                            <%= item.price%>
+                                        </div>
+                                    </div>
+    
+                                    
+                                </div>
+                            </div>
+
+                            
+                        <% }); %>    
+                    </div>
+                </div>
+            </section>
+
+            
+
+        <div class="row pt-5 mt-5 border-top">
+            <div class="col-md-6">
+                <h3 class="text-center">
+                    FUN의점<br>
+                    20210431 권오성
+                </h3>
+            </div>
+            <div class="col-md-6">
+
+                <address>
+                    <strong>fivestar Inc.</strong><br> 국립안동대학교 컴퓨터교육과<br> Andong South Korea<br> <abbr
+                        title="Phone">P:</abbr> 010-9905-8036
+                </address>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

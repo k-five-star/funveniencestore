@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>FUN의점</title>
+
+	<meta name="description" content="Source code generated using layoutit.com">
+	<meta name="author" content="LayoutIt!">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="list_script.js"></script>
+
+
+	<script>
+		function send(item) {
+			fetch('/', {
+				method : 'POST',
+				body : JSON.stringify({
+					store : item
+				}),
+				headers: {
+    				'Content-Type': 'application/json'
+  				}
+			})
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row sticky-top">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+				<a class="navbar-brand" href="index.html">FUN의점</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+					aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+							<ul class="navbar-nav me-auto">
+								<form action="/" method="post" class="d-flex">
+									<li class="nav-item">
+										<button class="btn btn-primary" type="submit" name="store" value="GS25">GS25</button>
+									</li>
+									<li class="nav-item">
+										<button class="btn btn-primary" type="submit" name="store" value="CU">CU</button>
+									</li>
+									<li class="nav-item">
+										<button class="btn btn-primary" type="submit" name="store" value="7ELEVEN">7ELEVEN</button>
+									</li>
+								</form>
+							</ul>
+						
+
+						<form class="d-flex" method="post" action="/">
+							<input class="form-control me-sm-2" type="text" placeholder="Search" name="name" >
+							<button class="btn btn-secondary my-2 my-sm-0" 
+								type="submit">Search</button>
+						</form>
+					</div>
+	
+					
+			</nav>
+		</div> <!-- NavBar ROW -->
+
+
+		<div class="row">
+			<div class="col-md-12 container">
+				<div id="demo" class="carousel slide pd-5 md-5" data-bs-ride="carousel">
+
+
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+						<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+						<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+					</div>
+
+
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="./images/편의점 3사!.jpg" alt="New York" class="d-block w-100 h-100">
+							<div class="carousel-caption">
+
+								<h2 class="text-black"> 헉! 편의점 3사의 제품 비교를 한 번에!</h2>
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<img src="./images/브레디크.jpg" alt="Chicago" class="d-block w-100 h-100">
+						</div>
+
+						<div class="carousel-item">
+							<img src="./images/selenium.jpg" alt="Los Angeles" class="d-block w-100 h-100">
+						</div>
+					</div>
+
+
+					<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</button>
+				</div>
+			</div>
+
+
+
+			<form method="post" action="/" id="prod_form">
+				<div class="form-group">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="상품명을 검색하시오." name="name">
+						<button class="btn btn-primary" type="submit">OK</button>
+						<button class="btn btn-danger" type="reset">Cancel</button>
+					</div>
+
+					<div class="container mt-3">
+						<h2>세부 검색</h2>
+
+						<div id="accordion">
+							<div class="card">
+								<div class="card-header">
+									<a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+										편의점을 선택하세요.
+									</a>
+								</div>
+								<div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+									<div class="card-body">
+										<fieldset class="form-group">
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="store" value="GS25">
+												<label class="form-check-label" for="flexCheckDefault">
+													GS25
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="store" value="CU">
+												<label class="form-check-label" for="flexCheckChecked">
+													CU
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="store" value="7ELEVEN">
+												<label class="form-check-label" for="flexCheckChecked">
+													7ELEVEN
+												</label>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									<a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+										할인률을 선택하세요.
+									</a>
+								</div>
+								<div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+									<div class="card-body">
+										<fieldset class="form-group">
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="sale" value="1+1">
+												<label class="form-check-label" for="flexCheckDefault">
+													1 + 1
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="sale" value="2+1">
+												<label class="form-check-label" for="flexCheckChecked">
+													2 + 1
+												</label>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+
+							<!-- <div class="card">
+								<div class="card-header">
+									<a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+										별점을 선택하세요.
+									</a>
+								</div>
+								<div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+									<div class="card-body">
+										<fieldset class="form-group">
+											<legend class="mt-4">0~5</legend>
+											<input type="range" class="form-range" min="0" max="5" step="1"
+												id="customRange3">
+										</fieldset>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<div class="row pt-5 mt-5 border-top">
+		<div class="col-md-6">
+			<h3 class="text-center">
+				FUN의점<br>
+				20210431 권오성
+			</h3>
+		</div>
+		<div class="col-md-6">
+
+			<address>
+				<strong>fivestar Inc.</strong><br> 국립안동대학교 컴퓨터교육과<br> Andong South Korea<br> <abbr
+					title="Phone">P:</abbr> 010-9905-8036
+			</address>
+		</div>
+	</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+
+</html>
